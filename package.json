@@ -1,7 +1,7 @@
 {
   "name": "@lossendae/vue-avatar",
-  "description": "Simple table component for Vue.js 2.x with pagination and sortable columns",
-  "version": "0.1.0",
+  "description": "Vue avatar comment: letter avatar & image lazy loaded",
+  "version": "0.1.1",
   "private": false,
   "license": "MIT",
   "author": "Stéphane Boulard <lossendae@gmail.com>",
@@ -23,7 +23,6 @@
     "vue.js",
     "vuejs",
     "component",
-    "table",
     "avatar"
   ],
   "devDependencies": {
