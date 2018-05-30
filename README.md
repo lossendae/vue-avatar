@@ -18,7 +18,8 @@ Then in your component
 import Vue from 'vue'
 import VueAvatar from '@lossendae/vue-avatar'
 
-Vue.use(VueAvatar)
+// To use globally
+Vue.component('vue-avatar', VueAvatar)
 ```
 
 ## Why this component
