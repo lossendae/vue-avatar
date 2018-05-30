@@ -487,12 +487,8 @@ var component = normalizeComponent(
 /* harmony default export */ var VueAvatar = (component.exports);
 // CONCATENATED MODULE: ./src/main.js
 
-/* harmony default export */ var main = ({
-  install: function install(Vue) {
-    Vue.component('vue-avatar', VueAvatar);
-  }
-});
 
+/* harmony default export */ var main = (VueAvatar);
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 /* concated harmony reexport */__webpack_require__.d(__webpack_exports__, "VueAvatar", function() { return VueAvatar; });
 
