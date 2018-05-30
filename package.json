@@ -1,0 +1,73 @@
+{
+  "name": "@lossendae/vue-avatar",
+  "description": "Simple table component for Vue.js 2.x with pagination and sortable columns",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "author": "Stéphane Boulard <lossendae@gmail.com>",
+  "main": "dist/VueAvatar.umd.min.js",
+  "module": "dist/VueAvatar.common.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lossendae/vue-avatar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lossendae/vue-avatar/issues"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name VueAvatar src/main.js",
+    "test": "vue-cli-service test:unit"
+  },
+  "keywords": [
+    "vue.js",
+    "vuejs",
+    "component",
+    "table",
+    "avatar"
+  ],
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.10",
+    "@vue/cli-plugin-unit-jest": "^3.0.0-beta.10",
+    "@vue/cli-service": "^3.0.0-beta.10",
+    "@vue/test-utils": "^1.0.0-beta.16",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^22.0.4",
+    "jest-mock-console": "^0.3.5",
+    "lodash": "^4.17.10",
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.vue$": "vue-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "testMatch": [
+      "<rootDir>/(tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx))"
+    ]
+  }
+}
