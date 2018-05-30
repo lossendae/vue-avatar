@@ -1,4 +1,4 @@
-# VueAvatar
+# VueAvatar [![CircleCI](https://circleci.com/gh/lossendae/vue-avatar/tree/master.svg?style=shield&circle-token=0a0d164e1fb6b205fefd64ed825704f57a63e9e9)](https://circleci.com/gh/lossendae/vue-avatar/tree/master)
 
 Avatar component for VueJS 2 
 
