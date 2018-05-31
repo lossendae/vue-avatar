@@ -105,12 +105,12 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("HrLf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/home/styx/Projets/vue-avatar/node_modules/.cache/vue-loader","cacheIdentifier":"401db1dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/VueAvatar.vue?vue&type=template&id=5f82df3a
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/home/styx/Projets/vue-avatar/node_modules/.cache/vue-loader","cacheIdentifier":"401db1dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/VueAvatar.vue?vue&type=template&id=6df284af
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-avatar",style:(_vm.style)},[(!_vm.image_exists)?_c('span',[_vm._v(_vm._s(_vm.initials))]):_vm._e()])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/VueAvatar.vue?vue&type=template&id=5f82df3a
+// CONCATENATED MODULE: ./src/VueAvatar.vue?vue&type=template&id=6df284af
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/arrayWithoutHoles.js
 function _arrayWithoutHoles(arr) {
@@ -209,7 +209,7 @@ var es6_number_constructor = __webpack_require__("xfY5");
  *
  * @type {*[]}
  */
-var COLORS_HSL = [[6, 73, 60], [340, 100, 63], [291, 49, 60], [263, 50, 64], [232, 46, 64], [198, 94, 63], [187, 74, 58], [175, 44, 50], [152, 45, 53], [87, 54, 59], [66, 58, 59], [51, 85, 51], [16, 100, 69], [0, 0, 76], [201, 17, 63], [17, 16, 57], [0, 0, 64]];
+var COLORS_HSL = [[6, 71, 60], [340, 85, 66], [291, 49, 60], [263, 49, 63], [232, 46, 64], [218, 93, 67], [187, 73, 70], [187, 73, 58], [175, 43, 50], [151, 44, 53], [88, 53, 59], [66, 73, 59], [51, 95, 53], [47, 100, 49], [40, 100, 50], [16, 100, 69], [0, 0, 76], [201, 17, 62], [17, 16, 56], [0, 0, 64], [233, 47, 79], [262, 49, 74], [0, 0, 76], [187, 73, 70], [15, 15, 69], [88, 52, 67]];
 /* harmony default export */ var VueAvatarvue_type_script_lang_js = ({
   props: {
     /**
@@ -286,10 +286,11 @@ var COLORS_HSL = [[6, 73, 60], [340, 100, 63], [291, 49, 60], [263, 50, 64], [23
           saturation = _this$background_colo[1],
           lightness = _this$background_colo[2];
 
+      var text_lightness = lightness < 60 ? lightness - 20 : lightness + 25;
       var default_styles = {
         display: 'inline-flex',
         backgroundColor: "hsl(".concat(hue, ", ").concat(saturation, "%, ").concat(lightness, "%)"),
-        color: "hsl(".concat(hue, ", ").concat(saturation, "%, ").concat(lightness + 30, "%)"),
+        color: "hsl(".concat(hue, ", ").concat(saturation, "%, ").concat(text_lightness, "%)"),
         fontWeight: 'bold',
         alignItems: 'center',
         justifyContent: 'center',

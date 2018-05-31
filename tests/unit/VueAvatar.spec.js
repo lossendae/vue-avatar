@@ -58,8 +58,8 @@ describe('VueAvatar.vue', () => {
             })
 
             const style = wrapper.vm.style
-            expect(style.backgroundColor).toEqual('hsl(16, 100%, 69%)')
-            expect(style.color).toEqual('hsl(16, 100%, 99%)')
+            expect(style.backgroundColor).toEqual('hsl(51, 95%, 53%)')
+            expect(style.color).toEqual('hsl(51, 95%, 33%)')
             expect(style.borderRadius).toEqual('50%')
             expect(style.width).toEqual('50px')
             expect(style.fontSize).toEqual(Math.floor(50 / 2.5) + 'px')
@@ -126,7 +126,7 @@ describe('VueAvatar.vue', () => {
 
             const style = wrapper.vm.style
             expect(style.backgroundColor).toEqual('hsl(20, 30%, 50%)')
-            expect(style.color).toEqual('hsl(20, 30%, 80%)')
+            expect(style.color).toEqual('hsl(20, 30%, 30%)')
             expect(style.borderRadius).toEqual('20%')
             expect(style.width).toEqual('25px')
             expect(style.fontSize).toEqual(Math.floor(25 / 2.5) + 'px')

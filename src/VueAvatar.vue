@@ -11,23 +11,32 @@
      * @type {*[]}
      */
     const COLORS_HSL = [
-        [6, 73, 60],
-        [340, 100, 63],
+        [6, 71, 60],
+        [340, 85, 66],
         [291, 49, 60],
-        [263, 50, 64],
+        [263, 49, 63],
         [232, 46, 64],
-        [198, 94, 63],
-        [187, 74, 58],
-        [175, 44, 50],
-        [152, 45, 53],
-        [87, 54, 59],
-        [66, 58, 59],
-        [51, 85, 51],
+        [218, 93, 67],
+        [187, 73, 70],
+        [187, 73, 58],
+        [175, 43, 50],
+        [151, 44, 53],
+        [88, 53, 59],
+        [66, 73, 59],
+        [51, 95, 53],
+        [47, 100, 49],
+        [40, 100, 50],
         [16, 100, 69],
         [0, 0, 76],
-        [201, 17, 63],
-        [17, 16, 57],
+        [201, 17, 62],
+        [17, 16, 56],
         [0, 0, 64],
+        [233, 47, 79],
+        [262, 49, 74],
+        [0, 0, 76],
+        [187, 73, 70],
+        [15, 15, 69],
+        [88, 52, 67],
     ]
 
     export default {
@@ -96,11 +105,12 @@
              */
             style() {
                 const [hue, saturation, lightness] = this.background_color
+                const text_lightness = lightness < 60 ? lightness - 20 : lightness + 25
 
                 const default_styles = {
                     display: 'inline-flex',
                     backgroundColor: `hsl(${hue}, ${saturation}%, ${lightness}%)`,
-                    color: `hsl(${hue}, ${saturation}%, ${lightness + 30}%)`,
+                    color: `hsl(${hue}, ${saturation}%, ${text_lightness}%)`,
                     fontWeight: 'bold',
                     alignItems: 'center',
                     justifyContent: 'center',
