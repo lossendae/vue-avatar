@@ -3,8 +3,8 @@
 Avatar component for VueJS 2 
 
 - Use username to create letter avatar (up to 3 chars)
-- If an image src is provided, will use it as avatar
-- Use lazy loading for the image. If it is loaded successfully, it will not used (letter avatar as fallback) 
+- If an image src is provided, will try to use it as avatar
+- Images are lazy loaded. If it is not loaded successfully, it will not be used (letter avatar as fallback) 
 
 ## Installation
 
