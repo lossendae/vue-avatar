@@ -111,6 +111,19 @@ const COLORS_HSL = [
 
 You can see the component in action [this codesandbox](https://codesandbox.io/s/pk4nvqr0kq)
 
+## Development
+
+```bash
+# Install dependencies
+yarn install
+
+# run the unit tests
+yarn test
+
+# Build
+yarn build 
+```
+
 ## License
 
 [MIT](https://github.com/lossendae/vue-avatar/blob/master/LICENSE)
