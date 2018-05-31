@@ -109,6 +109,8 @@ const COLORS_HSL = [
 ]
 ```
 
+You can see the component in action [this codesandbox](https://codesandbox.io/s/pk4nvqr0kq)
+
 ## License
 
 [MIT](https://github.com/lossendae/vue-avatar/blob/master/LICENSE)
