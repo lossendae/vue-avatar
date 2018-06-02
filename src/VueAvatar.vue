@@ -1,7 +1,9 @@
 <template>
-    <div class="vue-avatar" :style="style">
-        <span v-if="!image_exists">{{ initials }}</span>
-    </div>
+    <transition name="vue-avatar" mode="out-in">
+        <div class="vue-avatar" :style="style" :key="loaded_src">
+            <span v-if="!image_exists">{{ initials }}</span>
+        </div>
+    </transition>
 </template>
 
 <script>
@@ -87,9 +89,19 @@
                     return {}
                 },
             },
+            /**
+             * Specify the delay in milliseconds to wait before attempting to load the image src
+             * This allows to show the letter avatar for the given time and then eventually load the image
+             * Can be useful when used in combination with transition
+             */
+            delay: {
+                type: Number,
+                default: 0,
+            },
         },
         data() {
             return {
+                loaded_src: null,
                 image_exists: false,
             }
         },
@@ -125,7 +137,7 @@
 
                 if (this.image_exists) {
                     Object.assign(default_styles, {
-                        backgroundImage: `url(${this.src})`,
+                        backgroundImage: `url(${this.loaded_src})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'top center',
                     })
@@ -142,9 +154,14 @@
              * Attempt to load the image, if it succeed the letter avatar is replaced with the image
              */
             loadImage() {
-                const img = new Image()
-                img.onload = () => this.image_exists = true
-                img.src = this.src
+                setTimeout(() => {
+                    const img = new Image()
+                    img.onload = () => {
+                        this.loaded_src = this.src
+                        this.image_exists = true
+                    }
+                    img.src = this.src
+                }, this.delay)
             },
             format(parts) {
                 if (parts.length <= 3) {

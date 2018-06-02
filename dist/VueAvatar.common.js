@@ -105,12 +105,12 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 var setPublicPath = __webpack_require__("HrLf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/home/styx/Projets/vue-avatar/node_modules/.cache/vue-loader","cacheIdentifier":"401db1dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/VueAvatar.vue?vue&type=template&id=6df284af
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vue-avatar",style:(_vm.style)},[(!_vm.image_exists)?_c('span',[_vm._v(_vm._s(_vm.initials))]):_vm._e()])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"/home/styx/Projets/vue-avatar/node_modules/.cache/vue-loader","cacheIdentifier":"401db1dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/VueAvatar.vue?vue&type=template&id=7d81a7b3
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"vue-avatar","mode":"out-in"}},[_c('div',{key:_vm.loaded_src,staticClass:"vue-avatar",style:(_vm.style)},[(!_vm.image_exists)?_c('span',[_vm._v(_vm._s(_vm.initials))]):_vm._e()])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/VueAvatar.vue?vue&type=template&id=6df284af
+// CONCATENATED MODULE: ./src/VueAvatar.vue?vue&type=template&id=7d81a7b3
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/builtin/es6/arrayWithoutHoles.js
 function _arrayWithoutHoles(arr) {
@@ -203,6 +203,8 @@ var es6_number_constructor = __webpack_require__("xfY5");
 //
 //
 //
+//
+//
 
 /**
  * Inspired by https://github.com/ksz2k/letter_avatar
@@ -262,10 +264,21 @@ var COLORS_HSL = [[6, 71, 60], [340, 85, 66], [291, 49, 60], [263, 49, 63], [232
       default: function _default() {
         return {};
       }
+    },
+
+    /**
+     * Specify the delay in milliseconds to wait before attempting to load the image src
+     * This allows to show the letter avatar for the given time and then eventually load the image
+     * Can be useful when used in combination with transition
+     */
+    delay: {
+      type: Number,
+      default: 0
     }
   },
   data: function data() {
     return {
+      loaded_src: null,
       image_exists: false
     };
   },
@@ -305,7 +318,7 @@ var COLORS_HSL = [[6, 71, 60], [340, 85, 66], [291, 49, 60], [263, 49, 63], [232
 
       if (this.image_exists) {
         Object.assign(default_styles, {
-          backgroundImage: "url(".concat(this.src, ")"),
+          backgroundImage: "url(".concat(this.loaded_src, ")"),
           backgroundSize: 'cover',
           backgroundPosition: 'top center'
         });
@@ -324,13 +337,16 @@ var COLORS_HSL = [[6, 71, 60], [340, 85, 66], [291, 49, 60], [263, 49, 63], [232
     loadImage: function loadImage() {
       var _this = this;
 
-      var img = new Image();
+      setTimeout(function () {
+        var img = new Image();
 
-      img.onload = function () {
-        return _this.image_exists = true;
-      };
+        img.onload = function () {
+          _this.loaded_src = _this.src;
+          _this.image_exists = true;
+        };
 
-      img.src = this.src;
+        img.src = _this.src;
+      }, this.delay);
     },
     format: function format(parts) {
       if (parts.length <= 3) {

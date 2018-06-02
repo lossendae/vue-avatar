@@ -68,7 +68,73 @@ Vue.component('vue-avatar', VueAvatar)
 | **colors**       | Array  | `false`  | `DEFAULT_COLORS[]` (see below) | Pool of colors used for avatar background image (expect array of hsl values) |
 | **borderRadius** | Number | `false`  | `50`                           | Value of the border radius for the avatar                                    |
 | **customStyles** | Object | `false`  | `{}`                           | Custom style object to merge with the default style                          |
+| **delay**        | Number | `false`  | `0`                            | * See below                                                                  |
 
+### `delay` prop
+
+Specify the delay in milliseconds to wait before attempting to load the image src.
+
+This allows to show the letter avatar for the given time and then eventually load the image.
+
+Vue-avatar uses [vuejs built-in transitions](https://vuejs.org/v2/guide/transitions.html) to let you switch smoothly between the letters and the image.
+
+By default, the transition will not do anything, but with a little bit of css you can for example flip the avatar to the image once loaded :
+
+```css
+/* Add this to your css file or into your component style to flip the avatar into the image if the image is loaded successfully */
+/* The animation should also be triggered when the prop src changes */
+.vue-avatar-enter-active {
+  animation: vue-avatar-in .8s;
+}
+
+.vue-avatar-leave-active {
+  animation: vue-avatar-in reverse;
+}
+
+@keyframes vue-avatar-in {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+@keyframes vue-avatar-out {
+  from {
+    transform: perspective(400px);
+  }
+
+  30% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+    opacity: 1;
+  }
+
+  to {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    opacity: 0;
+  }
+}
+``` 
+
+The above transition was made using [animate.css](https://daneden.github.io/animate.css/)
 
 ## Default colors
 
@@ -109,7 +175,7 @@ const COLORS_HSL = [
 ]
 ```
 
-You can see the component in action [this codesandbox](https://codesandbox.io/s/pk4nvqr0kq)
+You can see the component in action in [this codesandbox](https://codesandbox.io/s/pk4nvqr0kq)
 
 ## Development
 

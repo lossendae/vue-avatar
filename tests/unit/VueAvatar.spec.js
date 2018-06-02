@@ -90,6 +90,7 @@ describe('VueAvatar.vue', () => {
                 },
             })
 
+            wrapper.vm.loaded_src = '/my-image.jpg'
             wrapper.vm.image_exists = true
 
             const style = wrapper.vm.style

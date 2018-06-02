@@ -1,7 +1,7 @@
 {
   "name": "@lossendae/vue-avatar",
   "description": "Vue avatar comment: letter avatar & image lazy loaded",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "license": "MIT",
   "author": "Stéphane Boulard <lossendae@gmail.com>",
